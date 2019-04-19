@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Survey</title>
+</head>
+<body>
+<div class="container">
+<h1><strong>Survey Questions</strong></h1>
+
+<h3>About You</h3>
+<div class="form-group">
+        <label for="exampleFormControlInput1">Name:</label>
+        <input type="text" class="form-control" id="friendName" >
+</div>
+<div class="form-group">
+        <label for="exampleFormControlInput1">Link to Photo</label>
+        <input type="text" class="form-control" id="photoLink" >
+</div>
+<h3>Multiple Choice</h3>
+<h4>Question 1</h4>
+<h5>Your mind is always buzzing with unexplored ideas and plans.</h5>
+<div class="form-group col-md-2">
+    <select class="form-control" id="Question1">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+<h4>Question 2</h4>
+<h5>Generally speaking, you rely more on your experience than your imagination.</h5>
+<div class="form-group col-md-2">
+    <select class="form-control" id="Question2">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+<h4>Question 3</h4>
+<h5>You find it easy to stay relaxed and focused even when there is some pressure.</h5>
+<div class="form-group col-md-2">
+    <select class="form-control" id="Question3">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+<h4>Question 4</h4>
+<h5>You rarely do something just out of sheer curiosity.</h5>
+<div class="form-group col-md-2">
+    <select class="form-control" id="Question4">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+<h4>Question 5</h4>
+<h5>People can rarely upset you.</h5>
+<div class="form-group col-md-2">
+    <select class="form-control" id="Question5">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+<h4>Question 6</h4>
+<h5>It is often difficult for you to relate to other people’s feelings.</h5>
+<div class="form-group col-md-2">
+    <select class="form-control" id="Question6">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+<h4>Question 7</h4>
+<h5>In a discussion, truth should be more important than people’s sensitivities.</h5>
+<div class="form-group col-md-2">
+    <select class="form-control" id="Question7">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+<h4>Question 8</h4>
+<h5>You rarely get carried away by fantasies and ideas.</h5>
+<div class="form-group col-md-2">
+    <select class="form-control" id="Question8">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+<h4>Question 9</h4>
+<h5>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h5>
+<div class="form-group col-md-2">
+    <select class="form-control" id="Question9">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+<h4>Question 10</h4>
+<h5>You feel more energetic after spending time with a group of people.</h5>
+<div class="form-group col-md-2">
+    <select class="form-control" id="Question10">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</div>
+
+<button type="talk" class="talk" id="submit">Submit</button>
+
+<br>
+<br>
+<br>
+</div>
+<script type="text/javascript">
+$("#submit").on("click", function(event){
+    event.preventDefault();
+    var newFriend = {
+        name: $("#friendName").val(),
+        photo: $("#photoLink").val(),
+        scores:[
+         $("#Question1").val(),
+         $("#Question2").val(),
+         $("#Question3").val(),
+         $("#Question4").val(),
+         $("#Question5").val(),
+         $("#Question6").val(),
+         $("#Question7").val(),
+         $("#Question8").val(),
+         $("#Question9").val(),
+         $("#Question10").val(),  
+    ]
+};
+    alert(newFriend);
+    alert(newFriend.name);
+    alert(newFriend.photo);
+    alert(newFriend.scores);
+    console.log(newFriend);
+    console.log("anything!");
+
+    $.post("../api/friends", newFriend,
+      function(data) {
+        if (data){
+            alert("new friends for you!")
+        }
+    alert("This may work");
+        
+      });
+});   
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
