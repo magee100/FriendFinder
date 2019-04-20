@@ -150,6 +150,28 @@
 <br>
 <br>
 </div>
+
+<div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 <script type="text/javascript">
 $("#submit").on("click", function(event){
     event.preventDefault();
@@ -166,27 +188,21 @@ $("#submit").on("click", function(event){
          $("#Question7").val(),
          $("#Question8").val(),
          $("#Question9").val(),
-         $("#Question10").val(),  
-    ]
-};
-    alert(newFriend);
-    alert(newFriend.name);
-    alert(newFriend.photo);
-    alert(newFriend.scores);
+         $("#Question10").val()  
+        ]
+    };
+    
     console.log(newFriend);
-    console.log("anything!");
 
-    $.post("../api/friends", newFriend,
+    $.post("/api/friends", newFriend,
       function(data) {
-        if (data){
-            alert("new friends for you!")
-        }
-    alert("This may work");
-        
+        $("#matchName").text(data.name);
+        $("#matchImg").attr("src", data.photo);
+
+        $("#resultsModal").modal("toggle");
       });
 });   
 </script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
